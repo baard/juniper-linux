@@ -1,0 +1,18 @@
+Install using:
+$ make install
+
+Copy the sample-configuration:
+$ cp /usr/local/share/doc/juniper/juniper.conf.sample /etc/juniper.conf
+
+Edit username/password in configuration-file!
+
+Start the tunnel using:
+$ sudo /etc/init.d/juniper start
+
+Logs can be found in:
+$ cat ~root/.juniper_networks/network_connect/ncsvc.log
+
+Beware that resolv.conf and routes may be overwritten by dhcp-clients 
+and NetworkManager.
+
+Certificate is just plain exported SSL-cert from https://ssl.bouvet.no.

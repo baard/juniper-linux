@@ -1,0 +1,7 @@
+# sample configuration file
+#
+HOST=ssl.bouvet.no
+USERNAME="<your username>"
+PASSWORD="<your password>"
+CERT_FILE=/usr/local/share/doc/juniper/ssl.bouvet.no.der
+#LOGLEVEL=4

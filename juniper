@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# Simple connect-script for Juniper VPN.
+#
+# Baard H. Rehn Johansen <baard@rehn.no>
+# Version 0.1 (2009-03-20)
+#
+# Tested on:
+# - Ubuntu 9.04 32-bit
+# - Ubuntu 8.04 64-bit (with ia32-libs)
+
+set -e
+
+CONF=/etc/juniper.conf
+
+LOGLEVEL=3
+test -e $CONF || exit 0
+. $CONF
+
+DAEMON=/usr/local/bin/ncsvc
+ROUTE=/sbin/route
+DESC="Juniper VPN client"
+NAME=juniper
+PIDFILE=/var/run/juniper.pid
+
+. /lib/lsb/init-functions
+
+test -x $DAEMON || exit 0
+
+start_it_up() {
+  log_daemon_msg "Starting $DESC" "$NAME"
+  start-stop-daemon --start --quiet --pidfile $PIDFILE \
+    --background --make-pidfile --exec $DAEMON -- \
+    -h $HOST -u $USERNAME -f $CERT_FILE -p $PASSWORD -L $LOGLEVEL
+  sleep 1
+  test -e $PIDFILE || log_end_msg 1 
+  log_end_msg 0
+}
+
+shut_it_down() {
+  log_daemon_msg "Stopping $DESC" "$NAME"
+  start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE
+  log_end_msg $?
+  rm -f $PIDFILE
+}
+
+case "$1" in
+  start)
+    start_it_up
+  ;;
+  stop)
+    shut_it_down
+  ;;
+  status)
+    status_of_proc -p ${PIDFILE} ${DAEMON} ${NAME} && exit 0 || exit $?
+  ;;
+  restart)
+    shut_it_down
+    start_it_up
+  ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}" >&2
+    exit 2
+  ;;
+esac
