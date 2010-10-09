@@ -2,6 +2,10 @@ Release 0.3: (9th Oct 2010)
 
 - Detects when daemon fails to start
 
+Release 0.2: (6th May 2009)
+
+- updated SSL-cert
+
 Release 0.1: (20th March 2009)
 
 - initial release
