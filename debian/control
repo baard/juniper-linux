@@ -7,6 +7,6 @@ Standards-Version: 3.8.3
 
 Package: juniper
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ia32-lib [amd64]
 Description: Startup scripts for Juniper VPN
  These scripts are simple wrappers around the Juniper VPN binary 'ncsvc'.
