@@ -1,15 +1,16 @@
 DESTDIR =
 PREFIX = /usr/local
 DOCS = $(DESTDIR)$(PREFIX)/share/doc/juniper
+INSTALL = install
+INSTALL_DATA = install -m644
 
 nothing:
 
 install:
-	cp ncsvc $(DESTDIR)$(PREFIX)/bin
-	cp juniper $(DESTDIR)/etc/init.d/juniper
-	mkdir -p $(DOCS)
-	cp juniper.conf.sample $(DOCS)
-	cp ssl.bouvet.no.der $(DOCS)
+	$(INSTALL) ncsvc $(DESTDIR)$(PREFIX)/bin
+	$(INSTALL) juniper $(DESTDIR)/etc/init.d/juniper
+	$(INSTALL_DATA) juniper.conf.sample $(DOCS)
+	$(INSTALL_DATA) ssl.bouvet.no.der $(DOCS)
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/ncsvc
