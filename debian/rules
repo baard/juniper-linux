@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+%:
+	dh $@
+
+override_dh_auto_install:
+	$(MAKE) install PREFIX=/usr DESTDIR=$(CURDIR)/debian/juniper
+	sed -i 's/usr\/local/usr/' $(CURDIR)/debian/juniper/etc/init.d/juniper
+	sed -i 's/usr\/local/usr/' $(CURDIR)/debian/juniper/usr/share/doc/juniper/juniper.conf.sample

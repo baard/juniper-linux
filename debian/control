@@ -1,0 +1,12 @@
+Source: juniper
+Section: unknown
+Priority: extra
+Maintainer: Baard H. Rehn Johansen <baard@rehn.no>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: juniper
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Startup scripts for Juniper VPN
+ These scripts are simple wrappers around the Juniper VPN binary 'ncsvc'.
