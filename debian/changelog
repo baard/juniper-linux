@@ -1,3 +1,9 @@
+juniper (0.4) natty; urgency=low
+
+  * Bumped version to match upstream versions. 
+
+ -- Baard H. Rehn Johansen <baard@baard-ul30a>  Sat, 07 May 2011 00:56:18 +0200
+
 juniper (0.2) natty; urgency=low
 
   * Updated SSL certs. 
