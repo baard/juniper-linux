@@ -1,3 +1,9 @@
+juniper (0.2) natty; urgency=low
+
+  * Updated SSL certs. 
+
+ -- Baard H. Rehn Johansen <baard@rehn.no>  Fri, 06 May 2011 21:52:49 +0200
+
 juniper (0.1) unstable; urgency=low
 
   * Initial Release.
