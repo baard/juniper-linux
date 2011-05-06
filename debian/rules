@@ -8,3 +8,6 @@ override_dh_auto_install:
 	$(MAKE) install PREFIX=/usr DESTDIR=$(CURDIR)/debian/juniper
 	sed -i 's/usr\/local/usr/' $(CURDIR)/debian/juniper/etc/init.d/juniper
 	sed -i 's/usr\/local/usr/' $(CURDIR)/debian/juniper/usr/share/doc/juniper/juniper.conf.sample
+
+override_dh_strip:
+
