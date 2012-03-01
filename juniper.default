@@ -1,0 +1,6 @@
+# default configuration file
+#
+HOST=ssl.bouvet.no
+CERT_FILE=/usr/share/doc/juniper/ssl.bouvet.no.der
+REALM="Bouvet Ansatte"
+LOGLEVEL=3

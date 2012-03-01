@@ -1,5 +1,5 @@
 Source: juniper
-Section: unknown
+Section: net
 Priority: extra
 Maintainer: Baard H. Rehn Johansen <baard@rehn.no>
 Build-Depends: debhelper (>= 7)

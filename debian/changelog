@@ -1,8 +1,14 @@
+juniper (0.5-1) maverick; urgency=low
+
+  * New upstream release. 
+
+ -- Baard H. Rehn Johansen <baard@rehn.no>  Thu, 01 Mar 2012 13:15:44 +0100
+
 juniper (0.4) natty; urgency=low
 
   * Bumped version to match upstream versions. 
 
- -- Baard H. Rehn Johansen <baard@baard-ul30a>  Sat, 07 May 2011 00:56:18 +0200
+ -- Baard H. Rehn Johansen <baard@rehn.no>  Sat, 07 May 2011 00:56:18 +0200
 
 juniper (0.2) natty; urgency=low
 

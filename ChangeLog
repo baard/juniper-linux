@@ -1,3 +1,10 @@
+Release 0.5 (1th Mar 2012)
+
+- updated SSL-cert
+- added realm-support
+- updated ncsvc to 7.1R5
+- added default config
+
 Release 0.4: (6th May 2011)
 
 - updated SSL-cert

@@ -13,7 +13,7 @@ set -e
 
 CONF=/etc/juniper.conf
 
-LOGLEVEL=3
+test -f /etc/default/juniper && . /etc/default/juniper
 test -e $CONF || exit 0
 . $CONF
 
@@ -36,7 +36,7 @@ start_it_up() {
   log_daemon_msg "Starting $DESC" "$NAME"
   start-stop-daemon --start --quiet --pidfile $PIDFILE \
     --background --make-pidfile --exec $DAEMON -- \
-    -h $HOST -u $USERNAME -f $CERT_FILE -p $PASSWORD -L $LOGLEVEL
+    -h $HOST -u $USERNAME -f $CERT_FILE -p $PASSWORD -L $LOGLEVEL -r "$REALM"
   sleep 1
   test -e $PIDFILE || log_end_msg 1 
   log_end_msg 0
@@ -59,12 +59,16 @@ case "$1" in
   status)
     status_of_proc -p ${PIDFILE} ${DAEMON} ${NAME} && exit 0 || exit $?
   ;;
+  force-reload)
+    shut_it_down
+    start_it_up
+  ;;
   restart)
     shut_it_down
     start_it_up
   ;;
   *)
-    echo "Usage: $0 {start|stop|restart|status}" >&2
+    echo "Usage: $0 {start|stop|force-reload|restart|status}" >&2
     exit 2
   ;;
 esac

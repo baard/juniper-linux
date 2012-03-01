@@ -1,0 +1,6 @@
+$ dch -i # new debian release
+$ dch -v # new upstream release
+
+$ debuild --no-lintian -i -us -uc -b # build
+$ debuild --no-lintian -i -us -uc -b -ai386 # build for i386
+$ debuild clean # clean
