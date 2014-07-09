@@ -16,3 +16,4 @@ Beware that resolv.conf and routes may be overwritten by dhcp-clients
 and NetworkManager.
 
 Certificate is just plain exported SSL-cert from https://ssl.bouvet.no.
+ncsvc was extracted from https://ssl.bouvet.no/dana-cached/ncLinuxApp.jar

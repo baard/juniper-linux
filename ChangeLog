@@ -1,3 +1,9 @@
+Release 0.6 (9th Jul 2014)
+
+- update SSL-cert
+- update ncsvc version
+- change default realm to Users
+
 Release 0.5 (1th Mar 2012)
 
 - updated SSL-cert
