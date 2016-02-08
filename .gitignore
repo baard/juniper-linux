@@ -1,0 +1,5 @@
+debian/files
+debian/juniper
+debian/juniper.debhelper.log
+debian/juniper.substvars
+debian/juniper/
