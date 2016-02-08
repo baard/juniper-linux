@@ -34,12 +34,17 @@ fi
 
 start_it_up() {
   log_daemon_msg "Starting $DESC" "$NAME"
-  start-stop-daemon --start --quiet --pidfile $PIDFILE \
+  start-stop-daemon --start --pidfile $PIDFILE \
     --background --make-pidfile --exec $DAEMON -- \
     -h $HOST -u $USERNAME -f $CERT_FILE -p $PASSWORD -L $LOGLEVEL -r "$REALM"
-  sleep 1
-  test -e $PIDFILE || log_end_msg 1 
-  log_end_msg 0
+  sleep 0.5 
+  PID=$(cat $PIDFILE) 
+  if ps -p $PID > /dev/null
+  then
+    log_end_msg 0
+  else
+    log_end_msg 1
+  fi
 }
 
 shut_it_down() {

@@ -2,6 +2,7 @@ Release 0.7 (8th Feb 2016)
 
 - update SSL-cert
 - change default realm to 'Ansatte'
+- fix pid check in init script
 
 Release 0.6 (9th Jul 2014)
 
