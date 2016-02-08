@@ -2,5 +2,5 @@
 #
 HOST=ssl.bouvet.no
 CERT_FILE=/usr/share/doc/juniper/ssl.bouvet.no.der
-REALM="Users"
+REALM="Ansatte"
 LOGLEVEL=3
