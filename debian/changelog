@@ -1,3 +1,9 @@
+juniper (0.8ubuntu1) trusty; urgency=medium
+
+  * Replace dependency from ia32-libs to lib32z1 
+
+ -- Baard H. Rehn Johansen <baard@baard-bouvet.bouvet.no>  Fri, 01 Apr 2016 21:33:19 +0200
+
 juniper (0.8) trusty; urgency=medium
 
   * New upstream release. 
