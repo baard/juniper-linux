@@ -1,3 +1,9 @@
+Release 0.8 (1th Apr 2016)
+
+- updated to 8.1
+- updated from ncsvc to pulsesvc
+- removed SSL-cert
+
 Release 0.7 (8th Feb 2016)
 
 - update SSL-cert

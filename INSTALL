@@ -10,10 +10,9 @@ Start the tunnel using:
 $ sudo /etc/init.d/juniper start
 
 Logs can be found in:
-$ cat ~root/.juniper_networks/network_connect/ncsvc.log
+$ cat ~root/.pulse_secure/pulse/pulsesvc.log
 
 Beware that resolv.conf and routes may be overwritten by dhcp-clients 
 and NetworkManager.
 
-Certificate is just plain exported SSL-cert from https://ssl.bouvet.no.
-ncsvc was extracted from https://ssl.bouvet.no/dana-cached/ncLinuxApp.jar
+pulsesvc was extracted from https://bouvetasa.sharepoint.com/Bouvet%20public/Download/VPN%20klient%20for%20ssl.bouvet.no/Linux/pulse-8.1R8.i386.deb
