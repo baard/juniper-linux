@@ -17,7 +17,7 @@ test -f /etc/default/juniper && . /etc/default/juniper
 test -e $CONF || exit 0
 . $CONF
 
-DAEMON=/usr/local/bin/ncsvc
+DAEMON=/usr/local/bin/pulsesvc
 ROUTE=/sbin/route
 DESC="Juniper VPN client"
 NAME=juniper
@@ -27,16 +27,11 @@ PIDFILE=/var/run/juniper.pid
 
 test -x $DAEMON || exit 0
 
-if [ ! -e $CERT_FILE ]; then
-  echo "CERT_FILE does not exist: $CERT_FILE"
-  exit 1
-fi
-
 start_it_up() {
   log_daemon_msg "Starting $DESC" "$NAME"
   start-stop-daemon --start --pidfile $PIDFILE \
     --background --make-pidfile --exec $DAEMON -- \
-    -h $HOST -u $USERNAME -f $CERT_FILE -p $PASSWORD -L $LOGLEVEL -r "$REALM"
+    -h $HOST -u $USERNAME -p $PASSWORD -L $LOGLEVEL -r "$REALM"
   sleep 0.5 
   PID=$(cat $PIDFILE) 
   if ps -p $PID > /dev/null
